@@ -21,6 +21,7 @@
 ```
 .
 ├── data/        # 데이터셋
+├── docs/        # 문서
 ├── notebooks/   # 분석 노트북
 └── README.md
 ```
