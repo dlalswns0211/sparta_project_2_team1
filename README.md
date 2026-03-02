@@ -23,7 +23,6 @@
 ├── data/           # 데이터셋
 ├── docs/           # 문서
 ├── src/            # 소스코드
-│   └─팀원명(영문)/    # 팀원별 소스코드
 ├── README.md
 └── pyproject.toml
 ```
