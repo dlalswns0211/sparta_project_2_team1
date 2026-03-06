@@ -1,10 +1,25 @@
+import platform
 import pandas as pd
+import matplotlib.pyplot as plt
 from pathlib import Path
 
 # 프로젝트 루트 기준 raw 데이터 경로
 _ORIGIN_DATA_DIR = Path(__file__).parent.parent / "data"
 # 프로젝트 루트 기준 전처리 완료 데이터 경로
 _PROCESSED_DATA_DIR = Path(__file__).parent.parent / "data_processed"
+
+def setup_korean_font():
+    """
+    matplotlib 한글 폰트를 OS에 맞게 설정.
+    """
+    if platform.system() == 'Windows':
+        plt.rcParams['font.family'] = 'Malgun Gothic'
+    elif platform.system() == 'Darwin':
+        plt.rcParams['font.family'] = 'AppleGothic'
+    else:
+        plt.rcParams['font.family'] = 'NanumGothic'
+    plt.rcParams['axes.unicode_minus'] = False
+
 
 def load_origin_data() -> pd.DataFrame:
     """
