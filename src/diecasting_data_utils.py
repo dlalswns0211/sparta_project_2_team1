@@ -26,6 +26,8 @@ def load_processed_data(product_type: int) -> pd.DataFrame:
     Returns:
         멀티헤더 DataFrame
     """
+    if product_type not in [1, 2]:
+        raise Exception("product_type 파라미터가 필요합니다.  ex)1 or 2")
     path = _PROCESSED_DATA_DIR / f"product_type_{product_type}.csv"
     return pd.read_csv(path, header=[0, 1])
 
